@@ -1,11 +1,8 @@
-## Interface: 50400
-## Title: RaidHide
-## Author: StoffeTiX @ Ticstyle
-## Version: 5.4.8
-## X-Curse-Packaged-Version: 5.4.8
-## X-Curse-Project-Name: RaidHide
-## X-Curse-Project-ID: raidhide
-## Website: http://raidhide.ticstyle.se/
-## Donate: http://donate.ticstyle.se/
-## Notes: Hides Blizzard's raid frames... All of it!                                 Author: |cff7f7fffStoffeTiX|r
-RaidHide.xml
+## Interface: 120001, 11508
+## Title: RaidHide |cff9966ff<dualityps>
+## Notes: Hides Blizzard's raid frames... All of it!
+## Author: dualityps
+## Version: v2.2.6
+## DefaultState: enabled
+
+RaidHide.lua

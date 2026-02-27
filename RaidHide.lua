@@ -1,13 +1,21 @@
-﻿local f = CreateFrame("Frame", nil, UIParent)
-	f:RegisterEvent("PLAYER_ENTERING_WORLD")
-	f:SetScript("OnEvent", function(self, event)
-			CompactRaidFrameManager:UnregisterAllEvents()
-			CompactRaidFrameManager:Hide()
-			CompactRaidFrameContainer:UnregisterAllEvents()
-			CompactRaidFrameContainer:Hide()
-end)
+﻿local addonName, addonTable = ...
 
-SLASH_RAIDHIDE1, SLASH_RAIDHIDE2 = '/raidhide', '/rh';
-function SlashCmdList.RAIDHIDE(msg, editbox)
- print("RaidHide is active, to deactivate please disable this addon.");
-end
+local eventFrame = CreateFrame("Frame")
+eventFrame:RegisterEvent("PLAYER_LOGIN")
+
+eventFrame:SetScript("OnEvent", function(self, event, ...)
+    if event == "PLAYER_LOGIN" then
+        
+        if CompactRaidFrameManager then
+            CompactRaidFrameManager:UnregisterAllEvents()
+            CompactRaidFrameManager:Hide()
+            RegisterStateDriver(CompactRaidFrameManager, "visibility", "hide")
+        end
+
+        if CompactRaidFrameContainer then
+            CompactRaidFrameContainer:UnregisterAllEvents()
+            CompactRaidFrameContainer:Hide()
+            RegisterStateDriver(CompactRaidFrameContainer, "visibility", "hide")
+        end
+    end
+end)
